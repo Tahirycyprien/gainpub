@@ -23,7 +23,9 @@ jobs:
           sed -i 's#<application#<uses-permission android:name="android.permission.INTERNET"/>\n    <application#' $M
           sed -i 's#</application>#    <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-3940256099942544~3347511713"/>\n    </application>#' $M
       - run: flutter pub get
-      - run: flutter build apk --release
+      - name: Construire l APK
+        run: |
+          flutter build apk --release > build.log 2>&1 || { grep -n -A 12 "What went wrong" build.log; tail -n 25 build.log; exit 1; }
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ github.run_number }}

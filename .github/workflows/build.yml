@@ -13,6 +13,7 @@ jobs:
           java-version: "17"
       - uses: subosito/flutter-action@v2
         with:
+          flutter-version: "3.27.4"
           channel: stable
       - name: Creer le projet Android
         run: flutter create --platforms=android --project-name gainpub --org com.gainpub .

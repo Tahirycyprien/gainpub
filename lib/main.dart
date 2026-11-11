@@ -11,8 +11,8 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 const kSupabaseUrl = 'https://irzvkcevdlsaqqkmhypa.supabase.co';
 const kSupabaseKey = 'sb_publishable_4Bj7YIwAB16D2MCRtqvczA_AENaMado';
 
-// ID de pub de TEST (Android). À remplacer par ton vrai ID AdMob au lancement.
-const kRewardedAdId = 'ca-app-pub-3940256099942544/5224354917';
+// ID du bloc d'annonces AdMob (pub avec récompense).
+const kRewardedAdId = 'ca-app-pub-6535401140220842/9288181044';
 const kDailyLimit = 20;
 const kUnlockViews = 200;
 const kMinWithdraw = [1000, 5000, 10000];

@@ -22,6 +22,8 @@ jobs:
           M=android/app/src/main/AndroidManifest.xml
           sed -i 's#<application#<uses-permission android:name="android.permission.INTERNET"/>\n    <application#' $M
           sed -i 's#</application>#    <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-3940256099942544~3347511713"/>\n    </application>#' $M
+          sed -i 's/"com.android.application" version "8.1.0"/"com.android.application" version "8.1.4"/' android/settings.gradle
+          grep -n "com.android.application" android/settings.gradle
       - run: flutter pub get
       - name: Construire l APK
         run: |
